@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Built-By: 1.5.0
+Created-By: Android Gradle 1.5.0
+
+Name: res/drawable-xxhdpi-v4/ic_launcher.png
+SHA1-Digest: hmsgDpsdQcNLyqUgc7nUR956L1U=
+
+Name: AndroidManifest.xml
+SHA1-Digest: ZwPRO2+yDVXKYpOIrnc1g/11plk=
+
+Name: res/drawable-xhdpi-v4/ic_launcher.png
+SHA1-Digest: 1TDlynQKYFyidqqrc7j3b9upnSg=
+
+Name: res/layout/activity_main.xml
+SHA1-Digest: H8R/k+v2rFtEvUJXvXLlRlvb+LA=
+
+Name: resources.arsc
+SHA1-Digest: inS4HKG5J4PQBFf8LPs+CwURbdg=
+
+Name: classes.dex
+SHA1-Digest: AM2EUUkXGUho+uAEsAQP9mdDUIs=
+
+Name: res/drawable-hdpi-v4/ic_launcher.png
+SHA1-Digest: KbCT2oNCHyvrboCYEs+Yri1tFzg=
+
+Name: res/drawable-mdpi-v4/ic_launcher.png
+SHA1-Digest: BuY3kOC4Eda+b9KLPgKLSLOmWL8=
+
