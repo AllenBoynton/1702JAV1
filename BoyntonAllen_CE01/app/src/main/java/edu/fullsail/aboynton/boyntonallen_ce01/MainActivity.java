@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Button button = (Button) view;
                 if (hasError) {
-                    textView.setText(button.getText());
+                    textView.setText(button.getText().toString());
                     hasError = false;
                 } else {
                     textView.append(button.getText());
@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String screen = textView.getText().toString();
                 // Check that an operator can only be entered if a number is present & no errors
                 if (lastNumber) {
                     Button button = (Button) view;
