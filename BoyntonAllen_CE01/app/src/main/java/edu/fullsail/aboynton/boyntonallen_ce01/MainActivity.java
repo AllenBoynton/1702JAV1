@@ -88,11 +88,10 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String screen = textView.getText().toString();
                 // Check that an operator can only be entered if a number is present & no errors
                 if (lastNumber) {
                     Button button = (Button) view;
-                    textView.setText(button.getText());
+                    textView.append(button.getText());
                     lastNumber = false;
 
                     // Defines what the operators are
