@@ -23,5 +23,6 @@
     <string name="equal">=</string>
     <string name="e">E</string>
     <string name="error">Error</string>
+    <string name="numInOrderToast">Entries must be in \'Number - Operator - Number\' format.</string>
 
 </resources>

@@ -8,11 +8,18 @@ package edu.fullsail.aboynton.boyntonallen_ce01;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static edu.fullsail.aboynton.boyntonallen_ce01.R.string.e;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Reports/Prints to the console
+    private static final String TAG = "MyActivity";
 
     // TextView used to display the output
     private TextView textView;
@@ -22,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private int[] operatorButtons;
 
     // Integers used to make the calculations
-    private int number1 = 0, number2 = 0;
+    private int number1 = 0, number2 = 0, equation = -1;
 
     // Variable determines which operator key is tapped and forwards to the function
     private String operator;
@@ -31,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean lastNumber;
 
     // A check to make sure there are no errors
-    private boolean hasError;
+    private boolean isEmpty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,16 +70,20 @@ public class MainActivity extends AppCompatActivity {
         // Create a common OnClickListener
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Button button = (Button) view;
-                if (hasError) {
-                    textView.setText(button.getText().toString());
-                    hasError = false;
-                } else {
-                    textView.append(button.getText());
-                    number1 = Integer.parseInt(button.getText().toString());
-                    System.out.println(number1);
+            public void onClick(View sender) {
+
+                if (equation != -1 && !isEmpty) {
+                    textView.setText("");
+//                    textView.setText(button.getText().toString());
+                    isEmpty = true;
+                } else if (!isEmpty) {
+                    textView.setText("");
+//                    textView.append(button.getText());
+//                    number1 = Integer.parseInt(button.getText().toString());
+                    isEmpty = true;
                 }
+                Button button = (Button) sender;
+                textView.append(button.getText());
                 lastNumber = true;
             }
         };
@@ -87,31 +98,30 @@ public class MainActivity extends AppCompatActivity {
         // Create an OnClickListener for operators
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View sender) {
                 // Check that an operator can only be entered if a number is present & no errors
                 if (lastNumber) {
-                    Button button = (Button) view;
-                    textView.append(button.getText());
-                    lastNumber = false;
-
-                    // Defines what the operators are
-                    switch (view.getId()) {
-                        case R.id.button_addition:
-                            operator = "+";
-                            break;
-                        case R.id.button_subtraction:
-                            operator = "-";
-                            break;
-                        case R.id.button_multiplication:
-                            operator = "*";
-                            break;
-                        case R.id.button_division:
-                            operator = "/";
-                            break;
-                        default:
-                            break;
+                    Button button = (Button) sender;
+                    if (button.getText().toString().equals("+")) {
+                        equation = 0;
+                    } else if (button.getText().toString().equals("-")) {
+                        equation = 1;
+                    } else if (button.getText().toString().equals("*")) {
+                        equation = 2;
+                    } else if (button.getText().toString().equals("/")) {
+                        equation = 3;
                     }
-                    System.out.println(operator);
+
+                    //get value of number in display and set to firstNum
+                    number1 = Integer.parseInt(textView.getText().toString());
+//                    number1 = Integer.parseInt(button.getText().toString());
+
+                    //add operand to function
+                    operator = button.getText().toString();
+                    textView.append(button.getText());
+                    isEmpty = false;
+//                    textView.append(button.getText());
+//                    lastNumber = false;
                 }
             }
         };
@@ -123,44 +133,44 @@ public class MainActivity extends AppCompatActivity {
         // Equals button
         findViewById(R.id.button_equals).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View sender) {
                 String screen = textView.getText().toString();
-                if (lastNumber) {
-                    try {
-                        number2 = Integer.parseInt(screen);
-                        System.out.println(number2);
-                    } catch (NumberFormatException ex) {
-                        ex.printStackTrace();
-                    }
 
-                    double result = 0d;
-
-                    switch (operator) {
-                        case "+":
-                            result = number1 + number2;
-                            break;
-                        case "-":
-                            result = number1 - number2;
-                            break;
-                        case "*":
-                            result = number1 * number2;
-                            break;
-                        case "/":
-                            if (number2 == 0) {
-                                textView.setText(R.string.e);
-                            } else {
-                                result = number1 / number2;
-                            }
-                            break;
-                        default:
-                            textView.setText(R.string.error);
-                            break;
-                    }
-                    textView.setText(screen + "=" + result);
+                if(!isValidEquation(sender)){
+                    toastMessage(sender);
+                    return;
                 }
+
+                //get the second num
+                number2 = Integer.parseInt(textView.getText().toString());
+
+                double result = 0d;
+
+                // Iterate through to correct function
+                switch (equation) {
+                    case 0:
+                        result = number1 + number2;
+                        break;
+                    case 1:
+                        result = number1 - number2;
+                        break;
+                    case 2:
+                        result = number1 * number2;
+                        break;
+                    case 3:
+                        if (number2 == 0) {
+                            textView.setText(e);
+                        } else {
+                            result = number1 / number2;
+                        }
+                        break;
+                    default:
+                        textView.setText(R.string.error);
+                        break;
+                }
+                textView.setText(screen + "=" + result);
             }
         });
-
         // Clear button
         findViewById(R.id.button_clear).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -168,51 +178,20 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText("");
                 // Need to reset the setting from each equation
                 lastNumber = false;
-                hasError = false;
+                isEmpty = false;
             }
         });
     }
-}
 
-    /*Performs the operation of specific operator to
-    get result and display it using switch statement*/
-//    private float doMath() {
-//        String screen = textView.getText().toString();
-//        if (lastNumber && !hasError) {
-//            try {
-//                number2 = Integer.parseInt(screen);
-//                System.out.println(number2);
-//            }
-//            catch (NumberFormatException ex) {
-//                ex.printStackTrace();
-//            }
-//            float result = 0;
-//
-//            switch (operator) {
-//                case "+":
-//                    return number1 + number2;
-////                    break;
-//                case "-":
-//                    return number1 - number2;
-////                    break;
-//                case "*":
-//                    return number1 * number2;
-////                    break;
-//                case "/":
-//                    if (number2 == 0) {
-//                        textView.setText(e);
-//                    } else {
-//                        return number1 / number2;
-//                    }
-////                    break;
-//                default:
-//                    textView.setText(R.string.error);
-//
-//                    break;
-//            }
-//            textView.setText(screen + "=" + result);
-//            System.out.println(operator);
-//        }
-//        return -1;
-//    }
-//}
+    public boolean isValidEquation(View sender) {
+        String currDisp = textView.getText().toString();
+        return !currDisp.equals("") && !operator.equals("") && !currDisp.contains(" ");
+    }
+
+    //displayed if an operator or equal sign is used out of order
+    public void toastMessage(View v) {
+        Toast warning = Toast.makeText(getApplicationContext(), R.string.numInOrderToast, Toast.LENGTH_SHORT);
+        warning.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, -250);
+        warning.show();
+    }
+}

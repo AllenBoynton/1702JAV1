@@ -23,25 +23,17 @@ public class MainActivity extends AppCompatActivity {
     private Random randomNumber;
 
     // Initializing each editText
-    private EditText editText1;
-    private EditText editText2;
-    private EditText editText3;
-    private EditText editText4;
-
-    // Initialize number holder set by user
-    private int userNumber1;
-    private int userNumber2;
-    private int userNumber3;
-    private int userNumber4;
-
-    // Initialize number to be set as random
-    private Integer value1;
-    private Integer value2;
-    private Integer value3;
-    private Integer value4;
+    private EditText[] editTexts;
 
     // Initialize user's number of guesses as 4 and counting down as button is tapped
-    private int numberOfGuesses;
+    private int totalGuesses = 4;
+    private static final int numOfElements = 10;
+
+    private int answerNum1 = 0;
+    private int answerNum2 = 0;
+    private int answerNum3 = 0;
+    private int answerNum4 = 0;
+    private int[] answerNums;
 
 
     @Override
@@ -50,10 +42,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Set views for each editText view
-        editText1 = (EditText) findViewById(R.id.number_one);
-        editText2 = (EditText) findViewById(R.id.number_two);
-        editText3 = (EditText) findViewById(R.id.number_three);
-        editText4 = (EditText) findViewById(R.id.number_four);
+        editTexts = new EditText[]{
+                (EditText) findViewById(R.id.number_one),
+                (EditText) findViewById(R.id.number_two),
+                (EditText) findViewById(R.id.number_three),
+                (EditText) findViewById(R.id.number_four)
+        };
+
+        answerNums = new int[] {answerNum1, answerNum2, answerNum3, answerNum4};
 
         // Set OnClick for submit button
         findViewById(R.id.submit_guess).setOnClickListener(listener);
@@ -67,49 +63,61 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
 
-            //TODO: Attempted to loop the addNumber method but neither For nor For each loop worked
+            // Using member variable to determine length
+            int[] userNumbers = new int[editTexts.length];
+
             // Enters the user's choice number in the text
-            if (addNumber(editText1) && addNumber(editText2) && addNumber(editText3) && addNumber(editText4)) {
-                userNumber1 = Integer.parseInt(editText1.getText().toString());
-                userNumber2 = Integer.parseInt(editText2.getText().toString());
-                userNumber3 = Integer.parseInt(editText3.getText().toString());
-                userNumber4 = Integer.parseInt(editText4.getText().toString());
-            } else {
-                // If a field is empty, a toast will inform the user
-                noTextToast();
+            for(int i = 0; i < editTexts.length; i++) {
+                if (checkInput(editTexts[i])) {
+                    String userInput = editTexts[i].getText().toString();
+                    userNumbers[i] = Integer.parseInt(userInput);
+                } else {
+                    // If a field is empty, a toast will inform the user
+                    noTextToast();
+                    return;
+                }
             }
 
-            // Check if guessed number is equal to hidden number
-            if (userNumber1 == value1 && userNumber2 == value2 && userNumber3 == value3 && userNumber4 == value4) {
+            for (int i =0; i < editTexts.length; ++i) {
+                if (userNumbers[i] == answerNums[i]) {
+
+                }
+            }
+
+            // Gives our user alerts as to where they are in the game
+            boolean gameComplete = true;
+            for(int i = 0; i < userNumbers.length; i++) {
+                updateColor(userNumbers[i], answerNums[i], editTexts[i]);
+                // Compares numbers entered by user and random number
+                if(userNumbers[i] != answerNums[i]) {
+                    gameComplete = false;
+                }
+            }
+
+            if(gameComplete) {
+                // Show success dialog
                 showCorrectAlerts();
-                return;
+                // Reset game
+                restart();
             }
-
-            // Figures the amount of guesses made
-            numberOfGuesses++;
-            if (numberOfGuesses == 4) {
-                showFailAlerts();
-                return;
+            else {
+                totalGuesses--;
+                // check if guess count is zero
+                if (totalGuesses == 0) {
+                    // If zero show failure
+                    showFailAlerts();
+                    restart();
+                }
+                else {
+                    // Decrement guess count and show user by toast
+                    showRemainingGuesses(totalGuesses--);
+                }
             }
-            else if (numberOfGuesses < 1) {
-                showFailAlerts();
-                return;
-            }
-
-            // Method calls parameters to determine color (correct/failed)
-            // I attempted 3 loops for each variable but color did not update at all
-            updateColor(userNumber1, value1, editText1);
-            updateColor(userNumber2, value2, editText2);
-            updateColor(userNumber3, value3, editText3);
-            updateColor(userNumber4, value4, editText4);
-
-            // Method call figures # of guesses left
-            showRemainingGuesses(4 - numberOfGuesses);
         }
     };
 
-    private boolean addNumber(EditText number) {
-        // Eliminates white space
+    // Eliminates white space
+    private boolean checkInput(EditText number) {
         return number.getText().toString().trim().length() > 0;
     }
 
@@ -147,8 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Toast alert if editViews are empty
     private void noTextToast() {
-        EditText editTexts[] = {editText1, editText2, editText3, editText4};
-        for (int i = 0; i < editTexts.length-1; i++) {
+        for (int i = 0; i < editTexts.length - 1; i++) {
             if (editTexts[i].getText().toString().trim().equals("")) {
                 Toast.makeText(this, R.string.ensureSubmit, Toast.LENGTH_LONG).show();
                 return;
@@ -178,18 +185,24 @@ public class MainActivity extends AppCompatActivity {
 
     // Method restarts game and initializes random numbers
     private void restart() {
-        EditText[] editTexts = {editText1, editText2, editText3, editText4};
+
+        // Resets text color and edit texts to empty
         for (EditText editText : editTexts) {
             editText.setTextColor(Color.BLACK);
             editText.setText("");
         }
-        // Attempted loop. All values were not reached whether a For or For each loop
-        value1 = randomNumber.nextInt(10);
-        value2 = randomNumber.nextInt(10);
-        value3 = randomNumber.nextInt(10);
-        value4 = randomNumber.nextInt(10);
+
+        // Resets the number of elements in the guess range
+        answerNum1 = randomNumber.nextInt(10);
+        answerNum2 = randomNumber.nextInt(10);
+        answerNum3 = randomNumber.nextInt(numOfElements);
+        answerNum4 = randomNumber.nextInt(10);
+
+//        for (int answerNum : answerNums) {
+//            answerNum = randomNumber.nextInt(numOfElements);
+//        }
 
         // Resets # of guesses with new game
-        showRemainingGuesses(4);
+        totalGuesses = 4;
     }
 }
