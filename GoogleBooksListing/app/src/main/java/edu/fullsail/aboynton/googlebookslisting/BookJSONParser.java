@@ -4,9 +4,7 @@
 
 // BookJSONParser.java
 
-
 package edu.fullsail.aboynton.googlebookslisting;
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,8 +25,8 @@ class BookJSONParser {
                 JSONObject object = array.getJSONObject(i);
                 BookGridData bookGridData = new BookGridData();
 
-                bookGridData.setTitle(object.getString("title"));
-                bookGridData.setThumbnail(object.getString("thumbnail"));
+                bookGridData.setName(object.getString("name"));
+                bookGridData.setPhoto(object.getString("photo"));
 
                 bookList.add(bookGridData);
             }

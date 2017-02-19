@@ -7,27 +7,38 @@
 package edu.fullsail.aboynton.googlebookslisting;
 
 
+import android.graphics.Bitmap;
+
 class BookGridData {
 
-    private String title;
-    private String thumbnail;
+    private String name;
+    private String photo;
+    private Bitmap bitmap;
 
     BookGridData() {
     }
 
-    public String getTitle() {
-        return title;
+    String getName() {
+        return name;
     }
 
-    void setTitle(String title) {
-        this.title = title;
+    void setName(String name) {
+        this.name = name;
     }
 
-    public String getThumbnail() {
-        return thumbnail;
+    public String getPhoto() {
+        return photo;
     }
 
-    void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
+    void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
     }
 }
