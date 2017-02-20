@@ -6,8 +6,8 @@
 
 package edu.fullsail.aboynton.googlebookslisting;
 
-import android.app.Activity;
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,69 +15,63 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 // Class for Grid view build
 class GridViewAdapter extends ArrayAdapter<BookGridData> {
 
-    private Context context;
-    private ArrayList<BookGridData> gridDataArrayList;
+    private final Context context;
+    private final ArrayList<BookGridData> mBookItems;
 
-
-    GridViewAdapter(Context context, int layoutResourceId, ArrayList<BookGridData> objects) {
-        super(context, layoutResourceId, objects);
+    GridViewAdapter(Context context, ArrayList<BookGridData> mBookItems) {
+        super(context, R.layout.grid_item_layout, mBookItems);
         this.context = context;
-        this.gridDataArrayList = objects;
+        this.mBookItems = mBookItems;
     }
 
-    public void setGridData(ArrayList<BookGridData> gridDataArrayList) {
-        this.gridDataArrayList = gridDataArrayList;
-        notifyDataSetChanged();
+    @Override
+    public int getCount() {
+        return mBookItems.size();
     }
-//    public int getCount() {
-//        return gridDataArrayList.size();
-//    }
-//
-//    public String getItem(int position) {
-//        return null;
-//    }
-//
-//    public long getItemId(int position) {
-//        return layoutResourceId;
-//    }
+
+    @Override
+    public BookGridData getItem(int position) {
+        return mBookItems.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
 
     // create a new ImageView for each item referenced by the Adapter
+    @NonNull // Did not know how to fix this
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+        LayoutInflater inflater = (LayoutInflater) context
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View rowView = inflater.inflate(R.layout.grid_item_layout, parent, false);
 
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.grid_item_layout, parent, false);
+        BookGridData bookData = getItem(position);
 
-        // Display book title
-        BookGridData bookGridData = gridDataArrayList.get(position);
-        TextView textView = (TextView) view.findViewById(R.id.grid_item_title);
-        textView.setText(bookGridData.getName());
+        ImageView bookPhoto = (ImageView) rowView.findViewById(R.id.grid_item_image);
+        TextView bookTitle = (TextView) rowView.findViewById(R.id.grid_item_title);
 
-        //Display flower photo in ImageView widget
-        ImageView image = (ImageView) view.findViewById(R.id.grid_item_image);
-        image.setImageBitmap(bookGridData.getBitmap());
+        if (bookData != null) {
+            bookTitle.setText(bookData.getTitle());
+        }
+        String imageUrl = null;
+        if (bookData != null) {
+            imageUrl = bookData.getPhoto();
+        }
 
-        return view;
+        Picasso.with(context)
+                .load(imageUrl)
+                .resize(200,200)
+                .into(bookPhoto);
+
+        return rowView;
     }
-//        ImageView imageView = (ImageView) convertView;
-//        if (imageView == null) {
-//            // if it's not recycled, initialize some attributes
-//            imageView = new ImageView(context);
-//
-//        }
-//        String url = "https://www.googleapis.com/books/v1/volumes?q=scorpions&orderBy=newest&key=AIzaSyDA1ZH96CVwdIshPOzfCUsWjKpibS6_JO8";
-//
-//        Picasso.with(context)
-//                .load(url)
-//                .resize(200,200)
-//                .into(imageView);
-//
-//
-//        return imageView;
-//    }
 }

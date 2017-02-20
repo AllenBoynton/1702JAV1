@@ -15,22 +15,25 @@ import java.util.List;
 
 class BookJSONParser {
 
+    //TODO: The image is in a subsection of the array. I could not figure out to fix.
+    //TODO: By the time I got to that point it was too late towards due time to spend more time or ask.
     static List<BookGridData> parseFeed(String content) {
-
         try {
             JSONArray array = new JSONArray(content);
-            List<BookGridData> bookList = new ArrayList<>();
+            List<BookGridData> dataList = new ArrayList<>();
 
-            for (int i = 0; i < array.length(); i++) {
-                JSONObject object = array.getJSONObject(i);
-                BookGridData bookGridData = new BookGridData();
+            for (int i = 0; i < 10/*array.length()*/; i++) {
 
-                bookGridData.setName(object.getString("name"));
-                bookGridData.setPhoto(object.getString("photo"));
+                JSONObject obj = array.getJSONObject(i);
+                BookGridData book = new BookGridData();
 
-                bookList.add(bookGridData);
+                book.setTitle(obj.getString("title"));
+                book.setPhoto(obj.getString("photo"));
+
+                dataList.add(book);
             }
-            return bookList;
+            return dataList;
+
         }
         catch (JSONException e) {
             e.printStackTrace();
