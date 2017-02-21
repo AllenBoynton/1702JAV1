@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">BoyntonAllen_CE12</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="name">Name:</string>
+    <string name="birthday">Birthday:</string>
+    <string name="gender">Gender:</string>
+    <string name="twitter_id">Twitter ID:</string>
+    <string name="num_committees">Committees:</string>
+    <string name="num_roles">Terms:</string>
+
+</resources>
