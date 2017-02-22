@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">BoyntonAllen_CE11</string>
+
+    // Button name
+    <string name="submit">Submit</string>
+
+    // Toast messages for invalid entries
+    <string name="noEntryToast">Nothing was entered.</string>
+    <string name="trimStringToast">Length of trimmed string is zero.</string>
+
+</resources>
