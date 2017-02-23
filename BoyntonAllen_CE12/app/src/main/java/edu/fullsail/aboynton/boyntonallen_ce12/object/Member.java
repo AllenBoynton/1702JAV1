@@ -26,8 +26,8 @@ public class Member {
 		this.mParty = _party;
 	}
 
-	public void setId(int _id) {
-		mId = _id;
+	public void setId(int mId) {
+		this.mId = mId;
 	}
 
 	public int getId() {
@@ -35,7 +35,7 @@ public class Member {
 	}
 
 	public void setName(String _name) {
-		mName = _name;
+		this.mName = _name;
 	}
 
 	public String getName() {
@@ -43,7 +43,7 @@ public class Member {
 	}
 
 	public void setParty(String _party) {
-		mParty = _party;
+		this.mParty = _party;
 	}
 
 	public String getParty() {

@@ -2,9 +2,6 @@ package edu.fullsail.aboynton.boyntonallen_ce12.net;
 
 import android.os.AsyncTask;
 
-import com.fullsail.android.busted.MainActivity;
-import com.fullsail.android.busted.object.Member;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,6 +9,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import edu.fullsail.aboynton.boyntonallen_ce12.MainActivity;
+import edu.fullsail.aboynton.boyntonallen_ce12.object.Member;
+
 
 public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 	
@@ -34,7 +33,7 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 			
 			JSONArray membersJson = response.getJSONArray("objects");
 			
-			ArrayList<Member> members = new ArrayList<Member>();
+			ArrayList<Member> members = new ArrayList<>();
 			
 			for(int i = 0; i < membersJson.length(); i++) {
 				JSONObject obj = membersJson.getJSONObject(i);
@@ -46,13 +45,13 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 				
 				members.add(new Member(id, name, party));
 			}
-			
+
 			// Update the UI
 			mActivity.showMembersListScreen(members);
-			
+
 			return members;
 			
-		} catch(JSONException e) {
+		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 		
@@ -62,5 +61,6 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 	@Override
 	protected void onPostExecute(ArrayList<Member> _result) {
 		super.onPostExecute(_result);
+
 	}
 }

@@ -26,6 +26,8 @@ public class GetDetailsTask extends AsyncTask<Integer, Void, HashMap<String, Str
 	public GetDetailsTask(MainActivity _activity) {
 		this.mActivity = _activity;
 	}
+
+
 	
 	@Override
 	protected HashMap<String, String> doInBackground(Integer... _params) {

@@ -9,18 +9,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.fullsail.android.busted.object.Member;
+import edu.fullsail.aboynton.boyntonallen_ce12.object.Member;
 
-public class MembersAdapter extends BaseAdapter {
+class MembersAdapter extends BaseAdapter {
 	
-	private static final long ID_CONSTANT = 0x010101010L;
+	private static final long ID_CONSTANT = 269488144;
 	
-	private Context mContext;
-	private ArrayList<Member> mMembers;
-	
-	public MembersAdapter(Context _context, ArrayList<Member> _members) {
-		mContext = _context;
-		mMembers = _members;
+	private final Context mContext;
+
+	MembersAdapter(Context _context) {
+		this.mContext = _context;
 	}
 
 	@Override
@@ -44,12 +42,11 @@ public class MembersAdapter extends BaseAdapter {
 		if(_convertView == null) {
 			_convertView = LayoutInflater.from(mContext).inflate(android.R.layout.simple_list_item_1, _parent, false);
 		}
-		
+
 		Member member = getItem(_position);
-		
+
 		((TextView)_convertView).setText(member.getName());
 		
 		return _convertView;
 	}
-	
 }

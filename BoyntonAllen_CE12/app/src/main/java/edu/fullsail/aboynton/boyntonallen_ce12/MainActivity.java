@@ -8,22 +8,21 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.fullsail.android.busted.MembersAdapter;
-import com.fullsail.android.busted.net.GetDetailsTask;
-import com.fullsail.android.busted.net.GetMembersTask;
-import com.fullsail.android.busted.object.Member;
-
 import java.util.ArrayList;
 
+import edu.fullsail.aboynton.boyntonallen_ce12.net.GetDetailsTask;
+import edu.fullsail.aboynton.boyntonallen_ce12.net.GetMembersTask;
+import edu.fullsail.aboynton.boyntonallen_ce12.object.Member;
+
 public class MainActivity extends Activity {
-	
+
 	private View mMembersListScreen;
 	private View mMemberDetailsScreen;
 
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main_portrait);
 		
 		mMembersListScreen = findViewById(R.id.members_list_screen);
 		mMemberDetailsScreen = findViewById(R.id.member_details_screen);
@@ -48,7 +47,7 @@ public class MainActivity extends Activity {
 		task.execute(_id);
 	}
 	
-	/**
+	/*
 	 * Populate the member details screen with data.
 	 * 
 	 * @param _name
@@ -79,12 +78,13 @@ public class MainActivity extends Activity {
 		tv = (TextView)mMembersListScreen.findViewById(R.id.text_num_roles);
 		tv.setText(_numRoles);
 	}
-	
 	OnItemClickListener mItemClickListener = new OnItemClickListener() {
 
 		@Override
 		public void onItemClick(AdapterView<?> _parent, View _view, int _position, long _id) {
 			// TODO: Show the members detail screen
+			GetDetailsTask detailsTask = new GetDetailsTask();
+			onBackPressed(detailsTask);
 		}
 		
 	};

@@ -1,50 +1,45 @@
 package edu.fullsail.aboynton.boyntonallen_ce12.net;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-import org.apache.commons.io.IOUtils;
-
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class NetworkUtils {
+import org.apache.commons.io.IOUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
+
+class NetworkUtils {
 	
-	public static boolean isConnected(Context _context) {
+	private boolean isConnected(Context _context) {
 		
 		ConnectivityManager mgr = (ConnectivityManager)_context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo info = mgr.getActiveNetworkInfo();
 
-		if(mgr != null) {
-			NetworkInfo info = mgr.getActiveNetworkInfo();
-
-			if(info != null) {
-				if(info.isConnected()) {
-					return true;
-				}
-			}
-		}
-		
-		return false;
+		return info.isConnectedOrConnecting();
 	}
 	
-	public static String getNetworkData(String _url) {
-		
-		URL url = new URL(_url);
-		
-		HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-		
-		connection.connect();
-		
-		InputStream is = connection.getInputStream();
-		
-		String data = IOUtils.toString(is);
-		
-		is.close();
-		
-		connection.disconnect();
-		
+	static String getNetworkData(String _url) {
+		String data = null;
+
+		try {
+			URL url = new URL(_url);
+			HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
+			connection.connect();
+
+			InputStream inputStream = connection.getInputStream();
+			data = IOUtils.toString(inputStream);
+			inputStream.close();
+
+			connection.disconnect();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		return data;
 	}
 }
