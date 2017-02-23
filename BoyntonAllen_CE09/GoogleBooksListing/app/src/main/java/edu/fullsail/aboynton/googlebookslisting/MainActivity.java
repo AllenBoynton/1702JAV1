@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 requestData(url);
             }
             else {
-                Toast.makeText(this, R.string.noConnectivity, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "No connectivity.", Toast.LENGTH_LONG).show();
             }
         }
         return false;
@@ -100,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
             // Do network operation
             BackThreadTask backThreadTask = new BackThreadTask();
             backThreadTask.execute(url);
-            Toast.makeText(this, R.string.connected, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You are connected.", Toast.LENGTH_SHORT).show();
         }
         else {
-            Toast.makeText(this, R.string.noConnection, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No connectivity", Toast.LENGTH_SHORT).show();
         }
         return info.isConnectedOrConnecting();
     }
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             progressBar.setVisibility(View.INVISIBLE);
 
             if (result == null) {
-                Toast.makeText(MainActivity.this, R.string.cantConnect, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Unable to connect to web", Toast.LENGTH_LONG).show();
                 return;
             }
             dataList = result;

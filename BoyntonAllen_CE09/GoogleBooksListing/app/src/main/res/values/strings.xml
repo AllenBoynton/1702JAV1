@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GoogleBooksListing</string>
+    <string name="get_data">Get data</string>
+    <string name="book_title_holder">Book title</string>
+</resources>
