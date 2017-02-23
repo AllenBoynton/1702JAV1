@@ -6,8 +6,8 @@
 
 package edu.fullsail.aboynton.boyntonallen_ce11;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,8 +19,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String TAG = "LIFECYCLES";
-    private static final String TEXT_CONTENTS = "TextContents";
+    private static final String LOG_TAG = "LOG_LIFE_CYCLE";
+    private static final String KEY_TEXT_LIST = "KEY_TEXT_LIST";
 
     private EditText userInput;
 
@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "onCreate: in");
+        Log.d(LOG_TAG, " ----> MainActivity.onCreate()");
 
         // Save the contents of the textList
         if (savedInstanceState != null) {
-            textList = savedInstanceState.getStringArrayList(TEXT_CONTENTS);
+            textList = savedInstanceState.getStringArrayList(KEY_TEXT_LIST);
         }
 
         // Assigns the userInput to the editText field
@@ -48,89 +48,80 @@ public class MainActivity extends AppCompatActivity {
         if (textList != null) {
             arrayAdapter = new ArrayAdapter<>(MainActivity.this,
                     android.R.layout.simple_list_item_1, textList);
+            // Sets the adapter
             stringListView.setAdapter(arrayAdapter);
         }
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 // Converts editView string to a String
                 String text = userInput.getText().toString();
 
                 // Adds userInput to the textList
-                textList.add(text);
+                textList.add(text.trim());
 
+                // Show a Toast Dialog
+                if (text.length() == 0) {
+                    textList.remove(textList.size() - 1);
+                    Toast.makeText(MainActivity.this,
+                            R.string.noEntryToast, Toast.LENGTH_SHORT).show();
+                } else if (text.trim().length() == 0) {
+                    Toast.makeText(MainActivity.this,
+                            R.string.trimStringToast, Toast.LENGTH_SHORT).show();
+                }
                 // Sets edit text to empty after text is submitted
                 userInput.setText("");
 
-                // Show a Toast Dialog
-                if (text.isEmpty()) {
-                    Toast.makeText(MainActivity.this, R.string.noEntryToast, Toast.LENGTH_SHORT).show();
-                }
-                else if (text.trim().contains(" ")) {
-                    userInput.setText(null);
-                    Toast.makeText(MainActivity.this, R.string.trimStringToast, Toast.LENGTH_SHORT).show();
-                }
                 // Sets the adapter
                 stringListView.setAdapter(arrayAdapter);
             }
         };
         // Set up onClickListener for button
         findViewById(R.id.submit_button).setOnClickListener(listener);
-        Log.d(TAG, "onCreate: out");
+        Log.i(LOG_TAG, " <---- MainActivity.onCreate()");
     }
 
     protected void onStart() {
-        Log.d(TAG, "onStart: in");
+        Log.i(LOG_TAG, " ----> MainActivity.onStart()");
         super.onStart();
-        Log.d(TAG, "onStart: out");
     }
 
     // Restores the instance state preferred method but not necessary
-    @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
-        Log.d(TAG, "onRestoreInstanceState IN: " + "ListView restored = " + stringListView.getCount());
+        Log.i(LOG_TAG, " ----> MainActivity.onRestoreInstanceState(): " + "ListView restored = " + stringListView.getCount());
         super.onRestoreInstanceState(savedInstanceState);
-        Log.d(TAG, "onRestoreInstanceState OUT: " + "ListView restored = " + stringListView.getCount());
     }
 
     protected void onRestart() {
-        Log.d(TAG, "onRestart: in");
+        Log.i(LOG_TAG, " ----> MainActivity.onRestart()");
         super.onRestart();
-        Log.d(TAG, "onRestart: out");
     }
 
     // Saves the instance state
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        Log.d(TAG, "onSaveInstanceState IN: " + "ListView saved: " + stringListView.getCount());
-        savedInstanceState.putStringArrayList(TEXT_CONTENTS, textList);
-        super.onSaveInstanceState(savedInstanceState);
-        Log.d(TAG, "onSaveInstanceState OUT: " + "ListView saved: " + stringListView.getCount());
+    public void onSaveInstanceState(Bundle outState) {
+        Log.i(LOG_TAG, " ----> MainActivity.onSaveInstanceState(): " + "ListView saved = " + stringListView.getCount());
+        outState.putStringArrayList(KEY_TEXT_LIST, textList);
+        super.onSaveInstanceState(outState);
     }
 
     protected void onPause() {
-        Log.d(TAG, "onPause: in");
+        Log.i(LOG_TAG, " ----> MainActivity.onPause()");
         super.onPause();
-        Log.d(TAG, "onPause: out");
     }
 
     protected void onResume() {
-        Log.d(TAG, "onResume: in");
+        Log.i(LOG_TAG, " ----> MainActivity.onResume()");
         super.onResume();
-        Log.d(TAG, "onResume: out");
     }
 
     protected void onStop() {
-        Log.d(TAG, "onStop: in");
+        Log.i(LOG_TAG, " ----> MainActivity.onStop()");
         super.onStop();
-        Log.d(TAG, "onStop: out");
     }
 
     protected void onDestroy() {
-        Log.d(TAG, "onDestroy: in");
+        Log.i(LOG_TAG, " ----> MainActivity.onDestroy()");
         super.onDestroy();
-        Log.d(TAG, "onDestroy: out");
     }
 }

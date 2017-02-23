@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textStyle="normal|bold"
         app:layout_constraintRight_toLeftOf="@+id/submit_button"
-        tools:ignore="HardcodedText"
+        tools:ignore="HardcodedText,LabelFor"
         android:maxLines="1"
         android:layout_marginTop="16dp"
         app:layout_constraintHorizontal_bias="0.0"
