@@ -1,3 +1,9 @@
+// Allen Boynton
+
+// JAV1 - 1702
+
+// NetworkUtils.java
+
 package edu.fullsail.aboynton.boyntonallen_ce12.net;
 
 import android.content.Context;
@@ -12,16 +18,16 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-class NetworkUtils {
-	
-	private boolean isConnected(Context _context) {
-		
+public class NetworkUtils {
+
+	public boolean isConnected(Context _context) {
+
 		ConnectivityManager mgr = (ConnectivityManager)_context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo info = mgr.getActiveNetworkInfo();
 
 		return info.isConnectedOrConnecting();
 	}
-	
+
 	static String getNetworkData(String _url) {
 		String data = null;
 

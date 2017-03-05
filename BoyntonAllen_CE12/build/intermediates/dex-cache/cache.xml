@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.0-beta5/constraint-layout-solver-1.0.0-beta5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ff0dad5e4fc720f478ce8b5f6edf76a932d9b886">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.0-beta5_f5716a8276de37debe854c45a65157cbaf5fd257/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.8.0_8a92b2c759b3746cbbdfb7426ba31fdabf829059/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.2.0_3595193e4b46a29a67eb9ca425d683ab52c01e68/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.2.0_d6f499f67b4aea49f25be3fd7a5f949b63f7a3dc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.2.0_5b49a3c8593fe3cda485f9287dbace71c26f0a9b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.2.0_2851e595370b0100c98513b81eb29a3ccd1600da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.2.0_a89dd99734e4482e8b28465ac37a727f9dbd0400/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support.constraint/constraint-layout/1.0.0-beta5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dce0f3de11781e1ee758cba483871b598c9d4931">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support.constraint-constraint-layout-1.0.0-beta5_7ca4efe6b75fd42c878ddb95ef89ed45b6b618e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/libs/commons-io-2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/2/commons-io-2.4_c8bd3d18bd95753fb4f6169acf3a66c7f012c285/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.2.0_d98fe7cf84c4e7ac0883d257870a6ea19204f6c2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.2.0_37119cd9faa1ea407107ea0a68c5fd6a706597fc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.2.0_d77ffd0c8ad7aa9229351c2331b2668cf04bd9de/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="70f3ed434d9935905aade48164049d3ca254b274">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_670aa092546a2b0194ccc3cbd801be7a354c935d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.2.0_5c9317b8a7be80578b49f5deae83b972bad97be7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="242b45093cd1e3d5dd2833f3ec694f2d91a70882">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d8b8c2d1a87215d5ef7648692311b58e9f8ed200/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.2.0_340d31a447f34137689812c77123fe1b8c8cec8e/classes.dex" />
+    </item>
+
+</items>

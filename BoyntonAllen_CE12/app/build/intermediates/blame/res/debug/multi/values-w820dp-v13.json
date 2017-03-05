@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/aboynton/FullSail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+        "outputFile": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/Users/aboynton/FullSail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/src/main/res/values-w820dp/dimens.xml",
+                    "file": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/src/main/res/values-w820dp/dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

@@ -1,12 +1,17 @@
+// Allen Boynton
+
+// JAV1 - 1702
+
+// Member.java
+
 package edu.fullsail.aboynton.boyntonallen_ce12.object;
 
 public class Member {
-
 	private int mId;
 	private String mName;
 	private String mParty;
 
-	private Member() {
+	public Member() {
 		this.mId = 0;
 		this.mName = mParty = "";
 	}
@@ -40,10 +45,6 @@ public class Member {
 
 	public String getName() {
 		return mName;
-	}
-
-	public void setParty(String _party) {
-		this.mParty = _party;
 	}
 
 	public String getParty() {

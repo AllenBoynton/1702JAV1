@@ -24,5 +24,7 @@
     <string name="e">E</string>
     <string name="error">Error</string>
     <string name="numInOrderToast">Entries must be in \'Number - Operator - Number\' format.</string>
+    <string name="pattern">\\s*(\\d*)\\s*([+-*/])\\s*(\\d*)\\s*</string>
+    <string name="notSupported">Not a supported mathematical expression:</string>
 
 </resources>

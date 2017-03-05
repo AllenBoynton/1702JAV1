@@ -1,10 +1,15 @@
+// Allen Boynton
+
+// JAV1 - 1702
+
+// MainActivity.java
+
 package edu.fullsail.aboynton.boyntonallen_ce12;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -12,20 +17,27 @@ import java.util.ArrayList;
 
 import edu.fullsail.aboynton.boyntonallen_ce12.net.GetDetailsTask;
 import edu.fullsail.aboynton.boyntonallen_ce12.net.GetMembersTask;
+import edu.fullsail.aboynton.boyntonallen_ce12.net.NetworkUtils;
 import edu.fullsail.aboynton.boyntonallen_ce12.object.Member;
+
 
 public class MainActivity extends Activity {
 
 	private View mMembersListScreen;
 	private View mMemberDetailsScreen;
 
+	private final Context mContext = null;
+
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
-		setContentView(R.layout.activity_main_portrait);
+		setContentView(R.layout.activity_main);
 		
 		mMembersListScreen = findViewById(R.id.members_list_screen);
 		mMemberDetailsScreen = findViewById(R.id.member_details_screen);
+
+		NetworkUtils networkUtils = new NetworkUtils();
+		networkUtils.isConnected(mContext);
 		
 		GetMembersTask task = new GetMembersTask(this);
 		task.execute();
@@ -57,7 +69,8 @@ public class MainActivity extends Activity {
 	 * @param _numCommittees
 	 * @param _numRoles
 	 */
-	public void populateMemberDetailsScreen(String _name, String _birthday, String _gender, 
+
+	public void populateMemberDetailsScreen(String _name, String _birthday, String _gender,
 			String _twitterId, String _numCommittees, String _numRoles) {
 		
 		TextView tv = (TextView)mMembersListScreen.findViewById(R.id.text_name);
@@ -78,16 +91,16 @@ public class MainActivity extends Activity {
 		tv = (TextView)mMembersListScreen.findViewById(R.id.text_num_roles);
 		tv.setText(_numRoles);
 	}
-	OnItemClickListener mItemClickListener = new OnItemClickListener() {
 
-		@Override
-		public void onItemClick(AdapterView<?> _parent, View _view, int _position, long _id) {
-			// TODO: Show the members detail screen
-			GetDetailsTask detailsTask = new GetDetailsTask();
-			onBackPressed(detailsTask);
-		}
-		
-	};
+//	OnItemClickListener mItemClickListener = new OnItemClickListener() {
+//		@Override
+//		public void onItemClick(AdapterView<?> _parent, View _view, int _position, long _id) {
+//			// TODO: Show the members detail screen
+//			GetDetailsTask detailsTask = new GetDetailsTask(showMemberDetailsScreen(MainActivity.this);
+//			onBackPressed();
+//		}
+//	};
+
 	
 	public void onBackPressed() {
 		if(mMemberDetailsScreen.getVisibility() == View.VISIBLE) {

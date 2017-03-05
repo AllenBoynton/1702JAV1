@@ -8,30 +8,27 @@ package edu.fullsail.aboynton.boyntonallen_ce01;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import static edu.fullsail.aboynton.boyntonallen_ce01.R.string.e;
 
 public class MainActivity extends AppCompatActivity {
 
     // Reports/Prints to the console
-    private static final String TAG = "MyActivity";
+    private static final String TAG = "MainActivity";
 
     // TextView used to display the output
     private TextView textView;
 
     // Using arrays to loop through the buttons in numbers and operators
-    private int[] numberButtons;
-    private int[] operatorButtons;
+    private static int[] numberButtons;
+    private static int[] operatorButtons;
 
     // Integers used to make the calculations
-    private int number1 = 0, number2 = 0, equation = -1;
+    private int number1 = 0;
 
-    // Variable determines which operator key is tapped and forwards to the function
     private String operator;
 
     // A check if the last key entered is a number
@@ -44,18 +41,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.i(TAG, "----> onCreate(): ON");
 
         // Display where users entry is and entire expression remains
         this.textView = (TextView) findViewById(R.id.textView);
+        textView.setText("");
 
         // IDs of all the number buttons
-        numberButtons = new int[]{R.id.button0, R.id.button1, R.id.button2, R.id.button3,
-                R.id.button4, R.id.button5, R.id.button6, R.id.button7, R.id.button8, R.id.button9
+        numberButtons = new int[]{R.id.button0,
+                R.id.button1, R.id.button2, R.id.button3,
+                R.id.button4, R.id.button5, R.id.button6,
+                R.id.button7, R.id.button8, R.id.button9
         };
 
         // IDs of all the operator buttons
         operatorButtons = new int[]{R.id.button_division, R.id.button_multiplication,
-                R.id.button_subtraction, R.id.button_addition, R.id.button_equals, R.id.button_clear
+                R.id.button_subtraction, R.id.button_addition
         };
 
         // Sets the OnClickListener for number buttons
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Sets the OnClickListener to operator buttons
         setOperatorOnClickListener();
+
+        Log.i(TAG, "<---- onCreate(): OFF");
     }
 
     // Sets the number buttons to OnClickListeners
@@ -71,25 +74,23 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View sender) {
-
-                if (equation != -1 && !isEmpty) {
-                    textView.setText("");
-//                    textView.setText(button.getText().toString());
-                    isEmpty = true;
-                } else if (!isEmpty) {
-                    textView.setText("");
-//                    textView.append(button.getText());
-//                    number1 = Integer.parseInt(button.getText().toString());
-                    isEmpty = true;
-                }
+//                String screen = textView.getText().toString();
                 Button button = (Button) sender;
-                textView.append(button.getText());
+                if (textView.getText().toString().isEmpty()) {
+                    textView.setText(button.getText());
+                    Log.i(TAG, "----> setNumberOnClickListener(1) " + textView.getText().toString());
+                    isEmpty = false;
+                } else {
+                    textView.setText("");
+                    textView.append(button.getText());
+                    Log.i(TAG, "<---- setNumberOnClickListener(2) " + textView.getText().toString());
+                }
                 lastNumber = true;
             }
         };
         // Assign the listener to the array of number buttons
-        for (int id : numberButtons) {
-            findViewById(id).setOnClickListener(listener);
+        for (int numberButton : numberButtons) {
+            findViewById(numberButton).setOnClickListener(listener);
         }
     }
 
@@ -99,99 +100,86 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View sender) {
-                // Check that an operator can only be entered if a number is present & no errors
-                if (lastNumber) {
-                    Button button = (Button) sender;
-                    if (button.getText().toString().equals("+")) {
-                        equation = 0;
-                    } else if (button.getText().toString().equals("-")) {
-                        equation = 1;
-                    } else if (button.getText().toString().equals("*")) {
-                        equation = 2;
-                    } else if (button.getText().toString().equals("/")) {
-                        equation = 3;
+                Button button = (Button) sender;
+                // Check that an operator can only be entered if a number is present & not empty
+                if (lastNumber && !isEmpty) {
+                    try {
+                        // Defines what the operators are
+                        if (button.getText().toString().equals("+")) {
+                            operator = "+";
+                        } else if (button.getText().toString().equals("-")) {
+                            operator = "-";
+                        } else if (button.getText().toString().equals("*")) {
+                            operator = "*";
+                        } else if (button.getText().toString().equals("/")) {
+                            operator = "/";
+                        }
+
+                        number1 = Integer.parseInt(textView.getText().toString());
+
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
                     }
-
-                    //get value of number in display and set to firstNum
-                    number1 = Integer.parseInt(textView.getText().toString());
-//                    number1 = Integer.parseInt(button.getText().toString());
-
-                    //add operand to function
-                    operator = button.getText().toString();
                     textView.append(button.getText());
-                    isEmpty = false;
-//                    textView.append(button.getText());
-//                    lastNumber = false;
+                    lastNumber = false;
+
+                    Log.i(TAG, "----> setOperatorOnClickListener() " + operator);
                 }
             }
         };
         // Assign the listener to all the operator buttons
-        for (int id : operatorButtons) {
-            findViewById(id).setOnClickListener(listener);
+        for (int operatorButton : operatorButtons) {
+            findViewById(operatorButton).setOnClickListener(listener);
         }
 
         // Equals button
         findViewById(R.id.button_equals).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View sender) {
-                String screen = textView.getText().toString();
+                if (lastNumber && !isEmpty) {
+                    double result = 0;
 
-                if(!isValidEquation(sender)){
-                    toastMessage(sender);
-                    return;
-                }
-
-                //get the second num
-                number2 = Integer.parseInt(textView.getText().toString());
-
-                double result = 0d;
-
-                // Iterate through to correct function
-                switch (equation) {
-                    case 0:
-                        result = number1 + number2;
-                        break;
-                    case 1:
-                        result = number1 - number2;
-                        break;
-                    case 2:
-                        result = number1 * number2;
-                        break;
-                    case 3:
-                        if (number2 == 0) {
-                            textView.setText(e);
-                        } else {
-                            result = number1 / number2;
+                    try {
+                        int number2 = Integer.parseInt(textView.getText().toString());
+                        // Iterate through to correct function
+                        switch (operator) {
+                            case "+":
+                                result = number1 + number2;
+                                break;
+                            case "-":
+                                result = number1 - number2;
+                                break;
+                            case "*":
+                                result = number1 * number2;
+                                break;
+                            case "/":
+                                if (number2 == 0) {
+                                    textView.setText(R.string.e);
+                                } else {
+                                    result = number1 / number2;
+                                }
+                                break;
                         }
-                        break;
-                    default:
-                        textView.setText(R.string.error);
-                        break;
+                        // Calculate the result and display
+                        textView.setText(number1 + operator + number2 + "=" + result);
+                        Log.d(TAG, "<---- onClick() = " + number1 + operator + number2 + " = " + result);
+                        lastNumber = false;
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
-                textView.setText(screen + "=" + result);
             }
         });
+
         // Clear button
         findViewById(R.id.button_clear).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View sender) {
                 textView.setText("");
                 // Need to reset the setting from each equation
                 lastNumber = false;
                 isEmpty = false;
             }
         });
-    }
-
-    public boolean isValidEquation(View sender) {
-        String currDisp = textView.getText().toString();
-        return !currDisp.equals("") && !operator.equals("") && !currDisp.contains(" ");
-    }
-
-    //displayed if an operator or equal sign is used out of order
-    public void toastMessage(View v) {
-        Toast warning = Toast.makeText(getApplicationContext(), R.string.numInOrderToast, Toast.LENGTH_SHORT);
-        warning.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, -250);
-        warning.show();
     }
 }

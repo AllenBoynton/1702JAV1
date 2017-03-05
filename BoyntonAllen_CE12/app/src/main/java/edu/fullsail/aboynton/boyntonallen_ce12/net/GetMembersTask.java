@@ -17,6 +17,8 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 	private static final String API_URL = "https://www.govtrack.us/api/v2/role?current=true";
 	
 	private MainActivity mActivity = new MainActivity();
+
+	private Member member = new Member();
 	
 	public GetMembersTask(MainActivity _activity) {
 		this.mActivity = _activity;
@@ -29,16 +31,16 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 		
 		try {
 			
-			JSONObject response = new JSONObject(data);
+			JSONObject outerMostObject = new JSONObject(data);
 			
-			JSONArray membersJson = response.getJSONArray("objects");
+			JSONArray membersJson = outerMostObject.getJSONArray("objects");
 			
 			ArrayList<Member> members = new ArrayList<>();
 			
 			for(int i = 0; i < membersJson.length(); i++) {
 				JSONObject obj = membersJson.getJSONObject(i);
 				JSONObject person = obj.getJSONObject("person");
-				
+
 				int id = person.getInt("id");
 				String name = person.getString("name");
 				String party = obj.getString("party");
@@ -48,6 +50,7 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 
 			// Update the UI
 			mActivity.showMembersListScreen(members);
+			mActivity.showMemberDetailsScreen(member.getId());
 
 			return members;
 			
@@ -61,6 +64,5 @@ public class GetMembersTask extends AsyncTask<Void, Void, ArrayList<Member>> {
 	@Override
 	protected void onPostExecute(ArrayList<Member> _result) {
 		super.onPostExecute(_result);
-
 	}
 }

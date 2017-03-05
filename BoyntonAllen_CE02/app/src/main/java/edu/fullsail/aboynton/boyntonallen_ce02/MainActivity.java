@@ -24,22 +24,20 @@ public class MainActivity extends AppCompatActivity {
 
     // Initializing each editText
     private EditText[] editTexts;
+    private int[] answerNums;
+    private int[] userNumbers;
 
     // Initialize user's number of guesses as 4 and counting down as button is tapped
     private int totalGuesses = 4;
-    private static final int numOfElements = 10;
-
-    private int answerNum1 = 0;
-    private int answerNum2 = 0;
-    private int answerNum3 = 0;
-    private int answerNum4 = 0;
-    private int[] answerNums;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Set OnClick for submit button
+        findViewById(R.id.submit_guess).setOnClickListener(listener);
 
         // Set views for each editText view
         editTexts = new EditText[]{
@@ -49,22 +47,21 @@ public class MainActivity extends AppCompatActivity {
                 (EditText) findViewById(R.id.number_four)
         };
 
+        int answerNum1 = 0, answerNum2 = 0, answerNum3 = 0, answerNum4 = 0;
         answerNums = new int[] {answerNum1, answerNum2, answerNum3, answerNum4};
 
-        // Set OnClick for submit button
-        findViewById(R.id.submit_guess).setOnClickListener(listener);
+        // Using member variable to determine length
+        userNumbers = new int[editTexts.length];
 
         // Using currentTimeMillis to calculate random number as recommended
         randomNumber = new Random(System.currentTimeMillis());
         restart();
     }
 
+    // Steps of entering guess, comparing, updating and give results
     private final View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
-            // Using member variable to determine length
-            int[] userNumbers = new int[editTexts.length];
 
             // Enters the user's choice number in the text
             for(int i = 0; i < editTexts.length; i++) {
@@ -74,47 +71,46 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     // If a field is empty, a toast will inform the user
                     noTextToast();
+                }
+            }
+
+            // Checks equality of strings for which ones are correct
+            for (int i =0; i < editTexts.length; ++i) {
+                if (userNumbers[i] == answerNums[i]) {
                     return;
                 }
             }
 
-            for (int i =0; i < editTexts.length; ++i) {
-                if (userNumbers[i] == answerNums[i]) {
-
-                }
-            }
-
-            // Gives our user alerts as to where they are in the game
-            boolean gameComplete = true;
+            boolean isGameComplete = false;
             for(int i = 0; i < userNumbers.length; i++) {
                 updateColor(userNumbers[i], answerNums[i], editTexts[i]);
                 // Compares numbers entered by user and random number
-                if(userNumbers[i] != answerNums[i]) {
-                    gameComplete = false;
+                if(userNumbers[i] == answerNums[i]) {
+                    isGameComplete = true;
                 }
             }
 
-            if(gameComplete) {
+            // Updates the amount of guesses made or game win
+            if(isGameComplete) {
                 // Show success dialog
                 showCorrectAlerts();
-                // Reset game
-                restart();
-            }
-            else {
+            } else {
                 totalGuesses--;
                 // check if guess count is zero
                 if (totalGuesses == 0) {
                     // If zero show failure
                     showFailAlerts();
-                    restart();
-                }
-                else {
+                } else {
                     // Decrement guess count and show user by toast
                     showRemainingGuesses(totalGuesses--);
                 }
             }
         }
     };
+
+//    private void gameCheck() {
+
+//    }
 
     // Eliminates white space
     private boolean checkInput(EditText number) {
@@ -156,8 +152,9 @@ public class MainActivity extends AppCompatActivity {
     // Toast alert if editViews are empty
     private void noTextToast() {
         for (int i = 0; i < editTexts.length - 1; i++) {
-            if (editTexts[i].getText().toString().trim().equals("")) {
-                Toast.makeText(this, R.string.ensureSubmit, Toast.LENGTH_LONG).show();
+            if (editTexts[i].getText().toString().trim().isEmpty()) {
+                Toast.makeText(this, R.string.ensureSubmit,
+                        Toast.LENGTH_LONG).show();
                 return;
             }
         }
@@ -167,7 +164,8 @@ public class MainActivity extends AppCompatActivity {
     private void showRemainingGuesses(int guesses) {
         if (guesses > 1) {
             Toast.makeText(this, guesses + getString(R.string.guessesLeft), Toast.LENGTH_LONG).show();
-        } else if (guesses == 1) {
+        }
+        else if (guesses == 1) {
             Toast.makeText(this, guesses + getString(R.string.oneGuessLeft), Toast.LENGTH_LONG).show();
         }
     }
@@ -185,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
 
     // Method restarts game and initializes random numbers
     private void restart() {
-
         // Resets text color and edit texts to empty
         for (EditText editText : editTexts) {
             editText.setTextColor(Color.BLACK);
@@ -193,14 +190,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Resets the number of elements in the guess range
-        answerNum1 = randomNumber.nextInt(10);
-        answerNum2 = randomNumber.nextInt(10);
-        answerNum3 = randomNumber.nextInt(numOfElements);
-        answerNum4 = randomNumber.nextInt(10);
-
-//        for (int answerNum : answerNums) {
-//            answerNum = randomNumber.nextInt(numOfElements);
-//        }
+        for (int i = 0; i < answerNums.length; i++) {
+            int numOfElements = 10;
+            answerNums[i] = randomNumber.nextInt(numOfElements);
+        }
 
         // Resets # of guesses with new game
         totalGuesses = 4;

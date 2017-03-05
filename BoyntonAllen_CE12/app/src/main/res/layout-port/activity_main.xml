@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
+<RelativeLayout android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:background="@android:color/background_light">
 
-    <LinearLayout
-        android:id="@+id/members_list_screen"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:visibility="visible"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp"
-        android:weightSum="1">
-
-        <ListView
-            android:id="@+id/members_list"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:scrollbars="horizontal" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/member_details_screen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout android:id="@+id/members_list_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:visibility="gone"
-        tools:layout_editor_absoluteY="602dp"
-        tools:layout_editor_absoluteX="411dp">
+        android:background="@android:color/background_light"
+        android:weightSum="1">
+
+        <ListView android:id="@+id/members_list"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/background_light"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/member_details_screen"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@android:color/background_light">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -46,8 +39,24 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/name" />
 
-            <TextView
-                android:id="@+id/text_name"
+            <TextView android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/birthday"/>
+
+            <TextView android:id="@+id/text_birthday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -64,19 +73,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/birthday" />
+                android:text="@string/gender"/>
 
-            <TextView
-                android:id="@+id/text_birthday"
+            <TextView android:id="@+id/text_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="fill_parent"
+        <LinearLayout android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -84,19 +91,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/gender" />
+                android:text="@string/twitter_id"/>
 
-            <TextView
-                android:id="@+id/text_gender"
+            <TextView android:id="@+id/text_twitter_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="fill_parent"
+        <LinearLayout android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -104,19 +109,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/twitter_id" />
+                android:text="@string/num_committees"/>
 
-            <TextView
-                android:id="@+id/text_twitter_id"
+            <TextView android:id="@+id/text_num_committees"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="fill_parent"
+        <LinearLayout android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -124,74 +127,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/num_committees" />
+                android:text="@string/name"/>
 
-            <TextView
-                android:id="@+id/text_num_committees"
+            <TextView android:id="@+id/text_num_roles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/name" />
-
-            <TextView
-                android:id="@+id/text_num_roles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
 
-    <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="0"
-    android:layout_width="-1"
-    android:layout_height="-1" >
 
-<LinearLayout android:orientation="1" android:id="0x7f050000" android:visibility="2" android:layout_width="-1" android:layout_height="-1">
-<ListView android:id="0x7f050001" android:layout_width="-1" android:layout_height="-1" />
-</LinearLayout>
-<LinearLayout android:orientation="1" android:id="0x7f050002" android:padding="16dp" android:visibility="2" android:layout_width="-1" android:layout_height="-1"
-<LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="48dp">
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="8dp" android:text="0x7f040004" />
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:id="0x7f050003" android:layout_width="-2" android:layout_height="-2" />
-</LinearLayout>
-<LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="48dp">
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="8dp" android:text="0x7f040001" />
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:id="0x7f050004" android:layout_width="-2" android:layout_height="-2" />
-</LinearLayout>
-<LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="48dp">
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="8dp" android:text="0x7f040002" />
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:id="0x7f050005" android:layout_width="-2" android:layout_height="-2" />
-</LinearLayout>
-<LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="48dp">
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="8dp" android:text="0x7f040007" />
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:id="0x7f050006" android:layout_width="-2" android:layout_height="-2" />
-</LinearLayout>
-<LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="48dp">
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="8dp" android:text="0x7f040005" />
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:id="0x7f050007" android:layout_width="-2" android:layout_height="-2" />
-</LinearLayout>
-<LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="48dp">
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="8dp" android:text="0x7f040004" />
-<TextView android:textAppearance="?unknown_attr_ref: 1010041" android:id="0x7f050008" android:layout_width="-2" android:layout_height="-2" />
-</LinearLayout>
-    </LinearLayout>
-    </LinearLayout>
 
