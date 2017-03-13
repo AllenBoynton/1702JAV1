@@ -1,42 +1,42 @@
 [
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_color_highlight_material.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_tint_default.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_tint_switch_track.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_tint_seek_thumb.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_btn_colored_text_material.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_color_highlight_material.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_tint_spinner.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_tint_switch_track.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_tint_default.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_tint_btn_checkable.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_tint_switch_thumb.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/color-v23/abc_tint_edittext.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/color-v23/abc_tint_edittext.xml"
     }
 ]

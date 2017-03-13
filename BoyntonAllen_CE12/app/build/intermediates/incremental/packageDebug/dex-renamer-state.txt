@@ -1,7 +1,0 @@
-#Mon Feb 27 01:40:42 EST 2017
-base.0=/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_670aa092546a2b0194ccc3cbd801be7a354c935d
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d8b8c2d1a87215d5ef7648692311b58e9f8ed200/classes.dex
-base.1=/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d8b8c2d1a87215d5ef7648692311b58e9f8ed200
-file.0=/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_670aa092546a2b0194ccc3cbd801be7a354c935d/classes.dex

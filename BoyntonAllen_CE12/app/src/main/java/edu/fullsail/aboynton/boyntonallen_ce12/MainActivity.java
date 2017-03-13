@@ -92,11 +92,11 @@ public class MainActivity extends Activity {
 		tv.setText(_numRoles);
 	}
 
-//	OnItemClickListener mItemClickListener = new OnItemClickListener() {
+//	OnItemClickListener detailClickListener = new OnItemClickListener() {
 //		@Override
 //		public void onItemClick(AdapterView<?> _parent, View _view, int _position, long _id) {
-//			// TODO: Show the members detail screen
-//			GetDetailsTask detailsTask = new GetDetailsTask(showMemberDetailsScreen(MainActivity.this);
+//			// Show the members detail screen
+//			GetDetailsTask detailsTask = new GetDetailsTask(showMemberDetailsScreen(MemberOnItemSelectedListener.this);
 //			onBackPressed();
 //		}
 //	};

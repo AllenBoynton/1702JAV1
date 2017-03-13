@@ -20,4 +20,7 @@
         <item>Base Adapter</item>
     </string-array>
 
+    // Alert dialog
+    <string name="okayDialogButton">Okay</string>
+
 </resources>

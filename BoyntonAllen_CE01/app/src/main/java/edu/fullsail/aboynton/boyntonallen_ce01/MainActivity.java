@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.i(TAG, "----> setNumberOnClickListener(1) " + textView.getText().toString());
                     isEmpty = false;
                 } else {
-                    textView.setText("");
                     textView.append(button.getText());
                     Log.i(TAG, "<---- setNumberOnClickListener(2) " + textView.getText().toString());
                 }
@@ -125,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.i(TAG, "----> setOperatorOnClickListener() " + operator);
                 }
+                textView.setText("");
             }
         };
         // Assign the listener to all the operator buttons
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View sender) {
                 if (lastNumber && !isEmpty) {
-                    double result = 0;
+                    int result = 0;
 
                     try {
                         int number2 = Integer.parseInt(textView.getText().toString());
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                                 result = number1 * number2;
                                 break;
                             case "/":
-                                if (number2 == 0) {
+                                if (number1 < number2) {
                                     textView.setText(R.string.e);
                                 } else {
                                     result = number1 / number2;

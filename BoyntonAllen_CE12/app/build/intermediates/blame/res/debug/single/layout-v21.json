@@ -1,18 +1,18 @@
 [
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v21/notification_action_tombstone.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/layout-v21/notification_action_tombstone.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v21/notification_template_custom_big.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/layout-v21/notification_template_custom_big.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v21/notification_action.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/layout-v21/notification_action.xml"
     },
     {
-        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
-        "source": "/Users/aboynton/School/Full Sail/Current Class/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/res/layout-v21/notification_template_icon_group.xml"
+        "merged": "/Users/aboynton/School/Full Sail/Current Class/Java1/Java1_1702/Repository/1702JAV1/BoyntonAllen_CE12/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/aboynton/.android/build-cache/bd916e74463a7a0a94abe6e103347ad668c709cf/output/res/layout-v21/notification_template_icon_group.xml"
     }
 ]
